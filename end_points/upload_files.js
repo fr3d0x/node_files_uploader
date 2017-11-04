@@ -4,7 +4,6 @@
 'use strict';
 
 const response = require('../lib/response');
-const models = require('../models');
 const fs = require('fs');
 const paths = require('../config/env_conf.json').server.paths;
 const shell = require('shelljs');
@@ -12,7 +11,7 @@ const upload_big_files = {
     register: function(server, option, next){
         server.route([
             {
-                method: "GET",
+                method: "POST",
                 path: "/api/upload_files",
                 config:{
                     payload:{
