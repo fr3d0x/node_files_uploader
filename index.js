@@ -15,6 +15,7 @@ const plugins = [];
 plugins.push(require('./auth/jwt'));
 /*Modules*/
 modules.push(require('./end_points/upload_files'));
+modules.push(require('./end_points/holamundo'));
 
 server.register(plugins.concat(modules), (err) => {
     if (err) {

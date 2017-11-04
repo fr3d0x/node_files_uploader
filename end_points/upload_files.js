@@ -27,7 +27,7 @@ const upload_big_files = {
                     }
                     fs.writeFileSync(paths.files_route+payload.file_name+"/"+payload.nombre+payload.ext, payload.documento, 'base64');
                     payload.documento = paths.files_route+payload.file_name+"/"+payload.nombre+payload.ext;
-                    let attatchments_folder = paths.files_route+query.file_name+"/anexos";
+                    let attatchments_folder = paths.files_route+payload.file_name+"/anexos";
                     if(payload.anexos.length > 0){
                         if (!fs.existsSync(attatchments_folder)){
                             shell.mkdir('-p', attatchments_folder);
