@@ -1,0 +1,36 @@
+{
+  "name": "node_files_uploader",
+  "version": "1.0.0",
+  "description": "node application for uploading files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "files",
+    "upload"
+  ],
+  "author": "los magicos",
+  "license": "ISC",
+  "config_path": "config",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-json-generator": "^0.1.0",
+    "hapi": "^16.6.2",
+    "jsonwebtoken": "^7.4.3",
+    "load-grunt-tasks": "^3.5.2",
+    "mysql": "^2.15.0",
+    "rimraf": "^2.6.2",
+    "sequelize": "^3.30.4",
+    "shelljs": "^0.7.8",
+    "time-grunt": "^1.4.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "daemon": "^1.1.0"
+  }
+}

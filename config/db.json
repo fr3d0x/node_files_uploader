@@ -1,0 +1,16 @@
+{"db": {
+    "db_conn":{
+      "username": "",
+      "password": "",
+      "database": "",
+      "host": "",
+      "dialect": "mysql",
+      "url": "mysql://root:1234@localhost/dawereDb",
+      "pool": {
+        "max": 5,
+        "min": 0,
+        "idle": 10000
+      }
+    }
+  }
+}
