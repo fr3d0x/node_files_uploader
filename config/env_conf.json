@@ -1,5 +1,5 @@
 {
-    "name": "development",
+    "name": "production",
     "server": {
         "conn": {
             "host": "localhost",
@@ -9,9 +9,8 @@
             }
         },
         "paths": {
-            "big_files_tmp": "/Users/fr3d0/projects/uploads/railsDpmUploads/big_files_tmp/",
-            "files_route": "/Users/fr3d0/projects/uploads/railsDpmUploads/",
-            "drive_route": "/Users/fr3d0/projects/uploads/railsDpmUploads/NUBE DAWERE/"
+            "big_files_tmp": "/home/fr3d0/Desktop/uploads/rails/big_files_tmp/",
+            "files_route": "/mnt/hgfs/railsDpmUploads/"
         }
     },
     "secret_key": "$3cr3t_k3y"
