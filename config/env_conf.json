@@ -1,13 +1,17 @@
 {
-    "name": "production",
+    "name": "development",
     "server": {
         "conn": {
             "host": "localhost",
-            "port": 8000
+            "port": 8000,
+            "routes": {
+                "cors": true
+            }
         },
         "paths": {
-            "big_files_tmp": "/home/fr3d0/Desktop/uploads/rails/big_files_tmp/",
-            "files_route": "/mnt/hfgs/railsDpmUploads/"
+            "big_files_tmp": "/Users/fr3d0/projects/uploads/railsDpmUploads/big_files_tmp/",
+            "files_route": "/Users/fr3d0/projects/uploads/railsDpmUploads/",
+            "drive_route": "/Users/fr3d0/projects/uploads/railsDpmUploads/NUBE DAWERE/"
         }
     },
     "secret_key": "$3cr3t_k3y"
