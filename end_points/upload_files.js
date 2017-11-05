@@ -21,21 +21,11 @@ const upload_big_files = {
                 handler: function(request, reply){
                     const payload = request.payload;
                     const dir = require('../config/env_conf.json').server.paths.files_route;
-                    if (!fs.existsSync(dir+payload.file_name)){
-                        shell.mkdir('-p', dir+payload.file_name);
+                    if (!fs.existsSync(dir+payload.name)){
+                        shell.mkdir('-p', dir+payload.name);
                     }
-                    fs.writeFileSync(paths.files_route+payload.file_name+"/"+payload.nombre+payload.ext, payload.documento, 'base64');
-                    payload.documento = paths.files_route+payload.file_name+"/"+payload.nombre+payload.ext;
-                    let attatchments_folder = paths.files_route+payload.file_name+"/anexos";
-                    if(payload.anexos.length > 0){
-                        if (!fs.existsSync(attatchments_folder)){
-                            shell.mkdir('-p', attatchments_folder);
-                        }
-                        payload.anexos.forEach(function (anexo) {
-                            fs.writeFileSync(attatchments_folder+anexo.nombre+anexo.ext, anexo.documento, 'base64');
-                            anexo.documento = attatchments_folder+anexo.nombre+anexo.ext;
-                        })
-                    }
+                    fs.writeFileSync(paths.files_route+payload.name+"/"+payload.name, payload.base64, 'base64');
+                    payload.file_url = "/uploads/"+payload.name;
                     reply({payload: payload, status: "SUCCESS"}).code(200)
                 }
             }
