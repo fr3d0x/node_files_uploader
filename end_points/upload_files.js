@@ -19,14 +19,19 @@ const upload_big_files = {
                     }
                 },
                 handler: function(request, reply){
-                    const payload = request.payload;
-                    const dir = require('../config/env_conf.json').server.paths.files_route;
-                    if (!fs.existsSync(dir+payload.name)){
-                        shell.mkdir('-p', dir+payload.name);
+                    try{
+                        const payload = request.payload;
+                        const dir = require('../config/env_conf.json').server.paths.files_route;
+                        if (!fs.existsSync(dir+payload.name)){
+                            shell.mkdir('-p', dir+payload.name);
+                        }
+                        fs.writeFileSync(dir+payload.name+"/"+payload.name, payload.base64, 'base64');
+                        payload.file_url = "/uploads/"+payload.name;
+                        reply({payload: payload, status: "SUCCESS"}).code(200)
+                    }catch (err){
+                        reply(err)
                     }
-                    fs.writeFileSync(dir+payload.name+"/"+payload.name, payload.base64, 'base64');
-                    payload.file_url = "/uploads/"+payload.name;
-                    reply({payload: payload, status: "SUCCESS"}).code(200)
+
                 }
             }
         ]);
