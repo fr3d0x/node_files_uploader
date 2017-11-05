@@ -28,7 +28,7 @@
     },
     "paths":{
       "big_files_tmp": "/home/fr3d0/Desktop/uploads/rails/big_files_tmp/",
-      "files_route": "/mnt/hfgs/railsDpmUploads/"
+      "files_route": "/mnt/hgfs/railsDpmUploads/"
     }
   }
 }

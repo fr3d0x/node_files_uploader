@@ -24,7 +24,7 @@ const upload_big_files = {
                     if (!fs.existsSync(dir+payload.name)){
                         shell.mkdir('-p', dir+payload.name);
                     }
-                    fs.writeFileSync(paths.files_route+payload.name+"/"+payload.name, payload.base64, 'base64');
+                    fs.writeFileSync(dir+payload.name+"/"+payload.name, payload.base64, 'base64');
                     payload.file_url = "/uploads/"+payload.name;
                     reply({payload: payload, status: "SUCCESS"}).code(200)
                 }
