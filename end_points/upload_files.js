@@ -22,11 +22,9 @@ const upload_big_files = {
                     try{
                         const payload = request.payload;
                         const dir = require('../config/env_conf.json').server.paths.files_route;
-                        console.log("made it to line 25");
                         if (!fs.existsSync(dir+payload.name)){
                             shell.mkdir('-p', dir+payload.name);
                         }
-                        console.log("made it to line 29");
                         fs.writeFileSync(dir+payload.name+"/"+payload.name, payload.base64, 'base64');
                         payload.file_url = "/uploads/"+payload.name;
                         reply({payload: payload, status: "SUCCESS"}).code(200)
